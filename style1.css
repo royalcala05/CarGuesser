@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    /*removes default browser margins and padding for a clean slate */
+    margin: 0; 
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    scroll-behavior: smooth;
+    
+}
+
+body{
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXZoZTNjanJhanc2bGo3NmI1Ym5seGJrdzhsOTVmcGM5b3ljdDR6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jtxEqpbPNfmFys3g5Y/giphy.webp');
+    background-size: cover;
+    
+    
+    
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+
+.navbar
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+.navbar h1 
+{
+    Display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    align-content: center;
+    text-decoration: none;
+    padding: 10px 20px; 
+    height: 100%;
+    width: 25%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #203A43, #203A43, #2C5364);
+    background: linear-gradient(to right, #0F2027, #203A43, #2C5364);
+    color: #fff;
+
+    transition: all 0.5s ease;
+
+}
+
+
+.navbar img 
+{
+max-width: fit-content;
+border-radius: 10px;
+margin: 10px auto; /* Centers the image inside the container */
+display: block; /* Ensures the image behaves like a block element */
+}
+
+.navbar__buttons
+{
+    display:block;
+    flex-direction: column;
+    margin: 10px
+}
+
+
+
+.navbar__login
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    align-content: center;
+    text-decoration: none;
+    padding: 10px 20px; 
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #203A43, #203A43, #2C5364);
+    background: linear-gradient(to right, #373B44, #4286f4);
+    color: #fff;
+
+    transition: all 0.5s ease;
+}
+.navbar__gPlay
+{
+    display: flex;
+    margin: 25px;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;
+    padding: 10px 20px; 
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #203A43, #203A43, #2C5364);
+    background: linear-gradient(to right, #373B44, #4286f4);
+    color: #fff;
+
+    transition: all 0.5s ease;
+}
+.navbar__settings
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;
+    padding: 10px 20px; 
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #0f2027;
+    background: -webkit-linear-gradient(to right, #203A43, #203A43, #2C5364);
+    background: linear-gradient(to right, #373B44, #4286f4);
+    color: #fff;
+
+    transition: all 0.5s ease;
+}
+
+
