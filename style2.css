@@ -18,3 +18,82 @@ body{
     padding:0;
     margin:0;
 }
+
+.playBar
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.imageDisplayWrapper
+{
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.imageDisplayWrapper img
+{
+    width: 300; 
+    border-radius: 10px;
+    height: 200px; 
+    border: 1px solid black;
+}
+
+.choice__buttons
+{
+    display:  grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+buttons_1
+{
+    width: 150px; /* Set button width */
+    height: 50px; /* Set button height */
+    background-color: #f4f4f4; /* Button background */
+    border: 2px solid #ccc; /* Button border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 16px; /* Font size for text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth hover effects */
+  }
+
+buttons_2
+{
+    width: 150px; /* Set button width */
+    height: 50px; /* Set button height */
+    background-color: #f4f4f4; /* Button background */
+    border: 2px solid #ccc; /* Button border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 16px; /* Font size for text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth hover effects */}
+buttons_3
+{
+    width: 150px; /* Set button width */
+    height: 50px; /* Set button height */
+    background-color: #f4f4f4; /* Button background */
+    border: 2px solid #ccc; /* Button border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 16px; /* Font size for text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth hover effects */
+}
+buttons_4
+{
+    width: 150px; /* Set button width */
+    height: 50px; /* Set button height */
+    background-color: #f4f4f4; /* Button background */
+    border: 2px solid #ccc; /* Button border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 16px; /* Font size for text */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth hover effects */
+}
+
+
+
