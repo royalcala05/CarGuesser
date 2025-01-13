@@ -50,7 +50,7 @@ body{
     justify-content: center;
     margin-top: 20px;
 }
-buttons_1
+.buttons_1
 {
     width: 150px; /* Set button width */
     height: 50px; /* Set button height */
@@ -62,7 +62,7 @@ buttons_1
     transition: all 0.3s ease; /* Smooth hover effects */
   }
 
-buttons_2
+.buttons_2
 {
     width: 150px; /* Set button width */
     height: 50px; /* Set button height */
@@ -72,7 +72,7 @@ buttons_2
     font-size: 16px; /* Font size for text */
     cursor: pointer; /* Change cursor to pointer on hover */
     transition: all 0.3s ease; /* Smooth hover effects */}
-buttons_3
+.buttons_3
 {
     width: 150px; /* Set button width */
     height: 50px; /* Set button height */
@@ -83,7 +83,7 @@ buttons_3
     cursor: pointer; /* Change cursor to pointer on hover */
     transition: all 0.3s ease; /* Smooth hover effects */
 }
-buttons_4
+.buttons_4
 {
     width: 150px; /* Set button width */
     height: 50px; /* Set button height */
@@ -95,5 +95,11 @@ buttons_4
     transition: all 0.3s ease; /* Smooth hover effects */
 }
 
+.nextQuestion__button
+{
+    float: right;
+    margin-left: 450px;    
+    margin-top: 50px;
+}
 
 
