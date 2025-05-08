@@ -8,6 +8,16 @@ if (startGameButton) {
     });
 }
 
+const signInButton = document.getElementById('login-button'); 
+if(signInButton)
+{
+    signInButton.addEventListener('click', () => {
+        window.location.href = 'loginPage.html'; 
+
+    });
+}
+
+
 // Check if the "Go Back" button exists on the current page
 // const goBackButton = document.getElementById('goBackButton');
 // if (goBackButton) {
