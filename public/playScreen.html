@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="style2.css"> <!--link too the css file-->
 </head> <!--actual design of website --> 
 <body>
-    <div class = "playBar"> <h1 class="question__num">Question 1/20</h1>
+    <div class = "playBar"> 
+        <h1 id = "questionCounterDisplay" class="question__num">   </h1>
         
-        <h2 class = "hint">Can you recognise: </h2>
+        <h2 class = "hint">Can you recognise: i want the car query to fill this in </h2>
         <div class = "imageDisplayWrapper">
         <!-- class will have api call -->
          <!-- maybe include a wrapper class for this image -->
@@ -20,8 +21,8 @@
             <button class="buttons__1">Porsche 911 </button>
             <button class="buttons__2">Bugatti Chiron </button>
             <button class="buttons__3">BMW E90 328i </button>
-            <button class="buttons__4">Jeep Wrangler </button>
-            <script src="script.js"></script> 
+            <button id = "button4" class="buttons__4">Jeep Wrangler </button>
+            <script src="frontEnd.js"></script> 
             <!-- Link the JavaScript file -->
         </div>
     <div class = "buttonFrame">
