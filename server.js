@@ -1,11 +1,27 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// get flies from the public folder 
+// Serve static files from the public folder
 app.use(express.static('public'));
 
-// starts the server 
+// Route for index (landing page)
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Route for play screen
+app.get('/play', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'playScreen.html'));
+});
+
+// Route for sign in
+app.get('/signin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'signIn.html'));
+});
+
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
