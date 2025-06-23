@@ -86,3 +86,20 @@ body {
   opacity: 0.85;
   transform: translateY(-2px);
 }
+
+.home__button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #fbbc05 0%, #c27803 100%);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+
+.home__button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
