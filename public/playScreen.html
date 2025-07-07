@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="playCSS.css"> <!--link too the css file-->
 </head> <!--actual design of website --> 
 <body>
+      <!-- script so images load -->
+
+
+        
     <div class = "playBar"> 
         <h1 id = "questionCounterDisplay" class="question__num">   </h1>
         
@@ -18,16 +22,20 @@
         </div>
 
         <div class = "choice__buttons">
-            <button class="buttons__1">Porsche 911 </button>
-            <button class="buttons__2">Bugatti Chiron </button>
-            <button class="buttons__3">BMW E90 328i </button>
-            <button id = "button4" class="buttons__4">Jeep Wrangler </button>
-            <script src="frontEnd.js"></script> 
-            <!-- Link the JavaScript file -->
-        </div>
+            <button class="buttons__1" > <span id="button1"></span> </button>
+            <button class="buttons__2"><span id="button2"></span> </button>
+            <button class="buttons__3"><span id="button3"></span></button>
+            <button class="buttons__4"><span id="button4"></span></button>
+            <!-- Link the js file -->
+
+    </div>
+      
+
     <div class = "buttonFrame">
     <button class="home__button" onclick="location.href='index.html'">Home</button>
         <button class="nextQuestion__button">Next Question</button>
     </div>
     
     </div>
+ <script src="frontEnd.js"></script>
+</body>

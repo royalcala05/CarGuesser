@@ -45,7 +45,7 @@ const carList = [
 // this creates the ROUTE in express for get requests 
 app.get('/api/random-car-image', async (req, res) => {
   // taking a random car from the list 
-  const car    = carList[Math.floor(Math.random() * carList.length)];
+  const car = carList[Math.floor(Math.random() * carList.length)];
   // grabs random car 
 
 
@@ -97,3 +97,4 @@ app.get('/api/random-car-image', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`✅  Server running at http://localhost:${PORT}`);
 });
+  
