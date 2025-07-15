@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Correct car from API:", car);
     console.log("Correct car make:", car.model);
 
+    console.log("Type of car:", typeof car);
+      console.log("Full car object:", car);
+
       const imgEl = document.querySelector(".imageDisplayWrapper img");
       // grabs the img SO WE CAN FILL IT WITH IMAGE 
     
@@ -47,6 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // hintEl.textContent = `Can you recognise: ${car}?`;
       // updates html 
       const correctCar = car;
+
+      
 
       const wrongOptions = [];
         let i = 0;
@@ -81,10 +86,70 @@ document.addEventListener("DOMContentLoaded", () => {
       options.forEach((model, index) => 
         {
           const span = buttons[index].querySelector("span")
+          console.log(span)
           span.textContent = model;
       })
 
-      
+      // when submit_button is clicked the function is called 
+      // document.getElementById("submit__button").onclick = function() {checkCorrect()};
+
+      // implement correct choice logic here 
+      document.querySelector(".buttons__1").addEventListener("click", function () 
+      {
+        if (this.textContent.trim() === correctCar.trim())
+        {
+          console.log("ur correct")
+
+        }
+        else
+        {
+          console.log("incorrect")
+        }
+      });
+
+      document.querySelector(".buttons__2").addEventListener("click", function () 
+      {
+        if (this.textContent.trim() === correctCar.trim())
+        {
+          console.log("ur correct")
+
+        }
+        else
+        {
+          console.log("incorrect")
+        }
+      });
+
+
+      document.querySelector(".buttons__3").addEventListener("click", function () 
+      {
+        if (this.textContent.trim() ===correctCar.trim())
+        {
+          console.log("ur correct")
+
+        }
+        else
+        {
+          console.log("incorrect")
+        }
+      });
+
+
+      document.querySelector(".buttons__4").addEventListener("click", function () 
+      {
+        if (this.textContent.trim() ===correctCar.trim())
+        {
+          console.log("ur correct")
+
+        }
+        else
+        {
+          console.log("incorrect")
+        }
+      });
+
+
+    
     })
     .catch((err) => {
       console.error(" Failed to load image:", err);
