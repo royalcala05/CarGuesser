@@ -1,5 +1,4 @@
 // car list that we will take from 
-console.log("Wrong options:");
 
 document.addEventListener("DOMContentLoaded", () => {
   const carList = [
@@ -16,84 +15,62 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   // question counter
-  const questionDisplay = document.getElementById("questionCounterDisplay");
   let questionCounter = 0;
-  questionDisplay.textContent = `Question ${questionCounter + 1}/20`;
+  const counterEl = document.getElementById("questionCounterDisplay");
+  counterEl.textContent = `Question ${questionCounter + 1}/20`;
 
+  const nextBtn = document.querySelector(".nextQuestion__button");
+  const imgEl = document.querySelector(".imageDisplayWrapper img");
 
+  async function buildQuestion() {
+    try {
+      // calls a http get request to my own server, it will return a response object "r"
+      const response = await fetch("http://localhost:3000/api/random-car-image");
+      const { car, imageUrl } = await response.json(); // parse it with .json()
 
-  // clals a http get requst to my own server, it will return a response object "r"
-  fetch("http://localhost:3000/api/random-car-image") 
-//   the r is a steam of bytes that arrivies in network packets  
-    .then((response) => response.json() )
-    // to read this response then we parse it with the .json() function 
-    // it is not read and parsed 
-
-    // we get these paranmeters from the bacend call return return res.json({ car, imageUrl: httpsUrl });
-    
-    .then(({ car, imageUrl }) =>       
-    {
-    console.log("Correct car from API:", car);
-    console.log("Correct car make:", car.model);
-
-    console.log("Type of car:", typeof car);
+      console.log("Correct car from API:", car);
+      console.log("Correct car make:", car.model);
+      console.log("Type of car:", typeof car);
       console.log("Full car object:", car);
 
-      const imgEl = document.querySelector(".imageDisplayWrapper img");
-      // grabs the img SO WE CAN FILL IT WITH IMAGE 
-    
-
+      // set image
       imgEl.src = imageUrl;
-      // this updates in the html 
-      // imgEl.alt = car;
-      // updates html 
-      // hintEl.textContent = `Can you recognise: ${car}?`;
-      // updates html 
+
       const correctCar = car;
 
-      
-
       const wrongOptions = [];
-        let i = 0;
+      let i = 0;
 
-        // this gets three random ochohices 
-        while (i < 3) {
-            const random = carList[Math.floor(Math.random() * carList.length)];
-            if (!wrongOptions.some(car => car.make === random.make)) {
-            wrongOptions.push(random);
-            i++;
-            }
+      // this gets three random choices
+      while (i < 3) {
+        const random = carList[Math.floor(Math.random() * carList.length)];
+        if (!wrongOptions.some(car => car.make === random.make)) {
+          wrongOptions.push(random);
+          i++;
         }
-        // creating an array with the correct answer, and the 3 wrong asnwers  
-        const options = [
-            correctCar, 
-            wrongOptions[0].model,
-            wrongOptions[1].model,
-            wrongOptions[2].model
-        ];
-
-      // let numOptions = options.length; 
-     for (let i = options.length - 1; i > 0; i--) 
-      {
-      const j = Math.floor(Math.random() * (i + 1));
-      [options[i], options[j]] = [options[j], options[i]];
       }
 
-      // options is now shuffled,(fisher yates) 
+      // creating an array with the correct answer, and the 3 wrong answers
+      const options = [
+        `${correctCar}`, // correct answer full name
+        `${wrongOptions[0].make} ${wrongOptions[0].model}`,
+        `${wrongOptions[1].make} ${wrongOptions[1].model}`,
+        `${wrongOptions[2].make} ${wrongOptions[2].model}`,
+      ];
 
-      // this const grabs all the children of the choice_buttons(specifically the buttons)
+      // shuffle the options (Fisher-Yates)
+      for (let i = options.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [options[i], options[j]] = [options[j], options[i]];
+      }
+
+      // populate buttons
       const buttons = document.querySelectorAll(".choice__buttons button");
-      options.forEach((model, index) => 
-        {
-          const span = buttons[index].querySelector("span")
-          console.log(span)
-          span.textContent = model;
-      })
+      options.forEach((text, index) => {
+        const span = buttons[index].querySelector("span");
+        if (span) span.textContent = text;
+      });
 
-      // when submit_button is clicked the function is called 
-      // document.getElementById("submit__button").onclick = function() {checkCorrect()};
-
-      // implement correct choice logic here 
       document.querySelector(".buttons__1").addEventListener("click", function () 
       {
         if (this.textContent.trim() === correctCar.trim())
@@ -107,54 +84,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      document.querySelector(".buttons__2").addEventListener("click", function () 
-      {
-        if (this.textContent.trim() === correctCar.trim())
-        {
-          console.log("ur correct")
-
-        }
-        else
-        {
-          console.log("incorrect")
-        }
-      });
-
-
-      document.querySelector(".buttons__3").addEventListener("click", function () 
-      {
-        if (this.textContent.trim() ===correctCar.trim())
-        {
-          console.log("ur correct")
-
-        }
-        else
-        {
-          console.log("incorrect")
-        }
-      });
-
-
-      document.querySelector(".buttons__4").addEventListener("click", function () 
-      {
-        if (this.textContent.trim() ===correctCar.trim())
-        {
-          console.log("ur correct")
-
-        }
-        else
-        {
-          console.log("incorrect")
-        }
-      });
-
-
-    
-    })
-    .catch((err) => {
-      console.error(" Failed to load image:", err);
+    } catch (err) {
+      console.error("Failed to load image:", err);
       document.querySelector(".hint").textContent = "Image failed to load.";
-    });
+    }
+  }
+
+  // Load initial question
+  buildQuestion();
+
+  // Next question button logic
+  nextBtn.addEventListener("click", () => {
+    questionCounter++;
+    if (questionCounter < 20) {
+      counterEl.textContent = `Question ${questionCounter + 1}/20`;
+      buildQuestion();
+    } else {
+      alert("Quiz complete!");
+    }
+  });
 });
-
-
